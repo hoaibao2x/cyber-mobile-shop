@@ -1,0 +1,12 @@
+.owl-carousel .owl-nav {
+    display: none;
+}
+
+#myNav {
+    .nav__content {
+        select {
+            background-color: $color-blue-dark;
+            color: $color-white;
+        }
+    }
+}

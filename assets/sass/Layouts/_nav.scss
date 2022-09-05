@@ -1,0 +1,26 @@
+nav {
+    margin-top: $mg-1;
+    background-color: $color-blue-dark;
+    padding-top: $pd-1;
+    padding-bottom: $pd-1;
+    .nav__content {
+        @include flexStyle;
+        .nav__left {
+            span {
+                font-size: $fs-4;
+                font-weight: $fw-3;
+                color: $color-white;
+            }
+        }
+        .nav__right {
+            a {
+                margin-left: $mg-2;
+                color: $color-white;
+                transition: all .5s;
+                &:hover {
+                    color: $color-orange-bright;
+                }
+            }
+        }
+    }
+}

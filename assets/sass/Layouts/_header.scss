@@ -1,0 +1,44 @@
+.header__top {
+    @include flexStyle;
+    margin-top: $mg-1;
+    .top__left {
+        span {
+            font-size: $fs-1;
+            color: $color-gray;
+        }
+    }
+    .top__right {
+        a {
+            font-size: $fs-1;
+            color: $color-gray;
+            margin-left: $mg-1;
+            transition: all 0.5s;
+
+            &:hover {
+                color: $color-orange-bright;
+            }
+        }
+    }
+}
+
+.header__bottom {
+    @include flexStyle;
+    .bottom__left {
+        a {
+            font-size: $fs-4;
+            font-weight: $fw-3;
+            span {
+                color: $color-orange-bright;
+                font-size: $fs-5;
+            }
+        }
+    }
+    .bottom__right {
+        button {
+            margin-left: $mg-2;
+            font-size: $fs-3;
+            background-color: $color-white;
+            border: $bd-0;
+        }
+    }
+}

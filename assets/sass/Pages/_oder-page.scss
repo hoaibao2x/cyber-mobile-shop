@@ -1,0 +1,158 @@
+.oder-content {
+    margin: $mg-3;
+    .content__top {
+        .top__title {
+            text-align: center;
+            font-weight: $fw-3;
+        }
+        .top__img {
+            margin: $mg-2 0;
+            img {
+                width: 40%;
+            }
+
+            #img__delivery {
+                display: none;
+            }
+        }
+    }
+    .content__bottom {
+        .bottom__left {
+            #myCollapse {
+                position: relative;
+                display: none;
+
+                &::before {
+                    content: "";
+                    z-index: -1;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    background: linear-gradient(-45deg, #60efff 0%, #0061ff 100%);
+                    transform: translate3d(0px, 20px, 0) scale(0.95);
+                    filter: blur(20px);
+                    opacity: var(0.7);
+                    transition: opacity 0.3s;
+                    border-radius: inherit;
+                }
+
+                &::after {
+                    content: "";
+                    z-index: -1;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    background: inherit;
+                    border-radius: inherit;
+                }
+
+                .card {
+                    border-radius: 15px;
+                    border-color: transparent;
+
+                    #headingOne {
+                        background-image: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%);
+                        margin: 10px;
+                        padding: 15px 45px;
+                        text-align: center;
+                        text-transform: uppercase;
+                        transition: 0.5s;
+                        background-size: 200% auto;
+                        color: white;
+                        box-shadow: 0 0 20px #eee;
+                        border-radius: 10px;
+                        display: block;
+
+                        &:hover {
+                            background-position: right center;
+                            color: #fff;
+                            text-decoration: none;
+                        }
+
+                        button {
+                            color: $color-white;
+                            font-size: $fs-4;
+                            font-weight: $fw-3;
+                            text-align: center;
+                            text-decoration: none;
+
+                            &:hover {
+                                text-decoration: none;
+                            }
+                            &:focus {
+                                box-shadow: none;
+                            }
+                        }
+                    }
+                }
+
+                #collapseOder {
+                    .oder__item {
+                        margin: $mg-3 0;
+                        .oder__image {
+                            width: 180px;
+                        }
+                        .oder__desc {
+                            font-size: $fs-4;
+                            .quantity__desc {
+                                color: $color-blue-pure;
+                            }
+                            .amount__desc {
+                                color: $color-red-bright;
+                            }
+                        }
+                    }
+                }
+
+                #collapseAmount {
+                    display: block;
+                    text-align: center;
+                    font-size: $fs-5;
+                    color: $color-red-bright;
+                }
+            }
+        }
+    }
+}
+
+.backToTop {
+    font-size: 18px;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 8px;
+    background-color: #f55f8d;
+    color: white;
+    display: block;
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+
+    background-image: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%);
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    &:hover {
+        background-position: right center;
+        color: #fff;
+        text-decoration: none;
+    }
+}
+
+.cd-top--is-visible {
+    visibility: visible;
+    opacity: 1;
+}

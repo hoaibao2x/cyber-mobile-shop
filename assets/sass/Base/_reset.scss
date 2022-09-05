@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Roboto', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    @include anchorStyle;
+    &:hover {
+         @include anchorStyle;
+    }
+}
+
+img {
+    width: 100%;;
+}

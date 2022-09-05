@@ -1,0 +1,99 @@
+.product-cart {
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, $alpha: 0.7);
+        z-index: 1;
+        display: none;
+    }
+    .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        background: #fff;
+        width: 950px;
+        height: 550px;
+        z-index: 2;
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;
+
+        .close-btn {
+            color: red;
+            position: absolute;
+            cursor: pointer;
+            right: 20px;
+            top: 20px;
+            font-size: 20px;
+        }
+
+        #cart-pay {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            position: absolute;
+            bottom: 20px;
+            left: 50px;
+
+            .pay-title {
+                font-weight: bold;
+            }
+
+            .pay-action {
+                button {
+                    font-weight: bold;
+                    padding: 10px 15px;
+                    border: none;
+                    border-radius: 5px;
+                }
+                .pur-action {
+                    // background-color: #8ec5fc;
+                    // background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
+
+                    background-image: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%);
+                    text-transform: uppercase;
+                    transition: 0.5s;
+                    background-size: 200% auto;
+                    color: white;
+                    box-shadow: 0 0 20px #eee;
+
+                    &:hover {
+                        background-position: right center;
+                        color: #fff;
+                    }
+                }
+                .clear-action {
+                    margin-left: 15px;
+
+                    background-image: linear-gradient(to right, #c04848 0%, #480048 51%, #c04848 100%);
+                    text-transform: uppercase;
+                    transition: 0.5s;
+                    background-size: 200% auto;
+                    color: white;
+                    box-shadow: 0 0 20px #eee;
+
+                    &:hover {
+                        background-position: right center;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.active {
+    .overlay {
+        display: block;
+    }
+    .content {
+        padding-right: 50px;
+        transition: all 300ms ease-in-out;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}

@@ -1,0 +1,25 @@
+#pop-up__cart__btn {
+    display: none;
+    .pop-up__cart__btn {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        padding: 15px 20px;
+
+        background-image: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%);
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;
+        box-shadow: 0 0 20px #eee;
+        border-radius: 10px;
+        border: none;
+        display: block;
+
+        &:hover {
+            background-position: right center;
+            color: #fff;
+        }
+    }
+}

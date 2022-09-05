@@ -1,0 +1,10 @@
+@mixin anchorStyle {
+    text-decoration: none;
+    color: $color-black;
+}
+
+@mixin  flexStyle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

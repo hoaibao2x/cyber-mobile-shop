@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- List Libs -->
+
+    <!-- Animate -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css" />
+
+    <!-- Owl-carousel -->
+    <link rel="stylesheet" href="../../../assets/sass/Vendor/owl.carousel.min.css">
+    <link rel="stylesheet" href="../../../assets/sass/Vendor/owl.theme.default.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="../../../css/main.css">
+
+    <title>Mobile Shop</title>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header__top container">
+            <div class="top__left">
+                <span>WELCOME TO OUR SHOP!</span>
+            </div>
+            <div class="top__right">
+                <!-- Location -->
+                <span>
+                    <a href="#">
+                        <i class="fa-solid fa-location-dot"></i> Select Location
+                    </a>
+                </span>
+                <!-- Login -->
+                <span>
+                    <a href="#">
+                        <i class="fa-solid fa-right-to-bracket"></i> Log In
+                    </a>
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="header__bottom container">
+            <div class="bottom__left">
+                <a href="../../../index.html">
+                    <span>E</span>lectronics
+                    <span>M</span>art
+                </a>
+
+            </div>
+            <div class="bottom__right">
+                <button>
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button>
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Nav -->
+    <nav id="myNav">
+        <div class="nav__content container">
+            <div class="nav__left">
+                <select class="form-control" id="navSelect" onchange="filterPros()">
+                    <option value="all">All categories</option>
+                    <option value="samsung">Samsung</option>
+                    <option value="iphone">iPhone</option>
+                </select>
+            </div>
+            <div class="nav__right">
+                <a href="../../../index.html">HOME</a>
+                <a href="#">PRODUCTS</a>
+                <a href="#">ABOUT US</a>
+                <a href="#">CONTACT US</a>
+            </div>
+        </div>
+    </nav>
+    <!-- End nav -->
+
+    <!-- Content -->
+    <section class="oder-content">
+        <!-- Top -->
+        <div class="content__top container">
+            <h3 id="top__title" class="top__title">Oops giỏ hàng của bạn hiện đang trống @@</h3>
+            <div class="top__img text-center wow fadeInLeft" data-wow-duration="1s">
+                <img id="img__delivery" src="../../../assets/img/cute_man_shipper.png" alt="">
+                <img id="img__empty__cart" src="../../../assets/img/cart_empty.png" alt="">
+            </div>
+        </div>
+        <!-- Bottom -->
+        <div class="content__bottom container">
+            <div class="row">
+                <!-- Left -->
+                <div class="col-md-8 mx-auto">
+                    <div class="bottom__left">
+                        <div class="accordion" id="myCollapse">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <h2>
+                                        <button class="btn btn-link btn-block" type="button" data-toggle="collapse"
+                                            data-target="#collapseOne">
+                                            Thông tin đơn hàng
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseOne" class="collapse" data-parent="#myCollapse">
+                                    <div id="collapseOder" class="card-body"></div>
+                                    <div>
+                                        <span id="collapseAmount"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End content -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer__content container">
+            <div class="content__top">
+                <!-- Item 1 -->
+                <div class="footer__item">
+                    <div class="item__title">
+                        <span>Categories</span>
+                    </div>
+                    <div class="item__link">
+                        <ul>
+                            <li>
+                                <a href="#">Mobiles</a>
+                            </li>
+                            <li>
+                                <a href="#">Computers</a>
+                            </li>
+                            <li>
+                                <a href="#">TV, Audio</a>
+                            </li>
+                            <li>
+                                <a href="#">Smartphones</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="footer__item">
+                    <div class="item__title">
+                        <span>Quick Links</span>
+                    </div>
+                    <div class="item__link">
+                        <ul>
+                            <li>
+                                <a href="#">About Us</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact Us</a>
+                            </li>
+                            <li>
+                                <a href="#">Help</a>
+                            </li>
+                            <li>
+                                <a href="#">Faqs</a>
+                            </li>
+                            <li>
+                                <a href="#">Terms of use</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy Policy</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="footer__item">
+                    <div class="item__title">
+                        <span>Get in Touch</span>
+                    </div>
+                    <div class="item__link">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <i class="fa-solid fa-location-dot"></i> Mkc, 123 Sebastian, USA.
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa-solid fa-mobile-button"></i> 12 2345 6790</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa-solid fa-phone-flip"></i> +11 3672 1890</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa-solid fa-envelope-open"></i> contact@mobileshop.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="footer__item">
+                    <div class="item__title">
+                        <span>Follow Us on</span>
+                    </div>
+                    <div class="item__link">
+                        <a href="#" class="link__fb">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="#" class="link__tw">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="#" class="link__gg">
+                            <i class="fa-brands fa-google-plus"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End footer -->
+
+    <!-- Back To Top btn -->
+    <a href="#" class="backToTop cd-top text-replace js-cd-top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- wow js -->
+    <script src="https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js"></script>
+
+    <script>
+        new WOW().init();
+    </script>
+
+    <!-- back to top -->
+    <script src="../../controller/js libs/back-to-top/util.js"></script>
+    <script src="../../controller/js libs/back-to-top/main.js"></script>
+
+    <!-- axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- main js -->
+    <script src="../../models/user/Cart.js"></script>
+
+    <script src="../../controller/user/oder-page.js"></script>
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

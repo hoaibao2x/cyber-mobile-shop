@@ -1,0 +1,95 @@
+.product__item {
+    margin-top: $mg-2;
+    margin-bottom: $mg-2;
+    .card {
+        border-radius: 15px;
+        transform: translateY(0);
+        transition: all 0.5s;
+
+        &:hover {
+            transform: translateY(-15px);
+
+            &::before {
+                content: "";
+                z-index: -1;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background: linear-gradient(-45deg, #60efff 0%, #0061ff 100%);
+                transform: translate3d(0px, 20px, 0) scale(0.95);
+                filter: blur(20px);
+                opacity: var(0.7);
+                transition: opacity 0.3s;
+                border-radius: inherit;
+            }
+
+            &::after {
+                content: "";
+                z-index: -1;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background: inherit;
+                border-radius: inherit;
+            }
+
+            .card-header {
+                transform: scale(1.05);
+            }
+        }
+
+        .card-header {
+            background: transparent;
+            transform: scale(1);
+            transition: all 0.5s;
+        }
+        .pro__content {
+            font-size: $fs-2;
+            height: 150px;
+            .pro__name {
+                font-size: $fs-3;
+                text-align: $text-style-1;
+                font-weight: $fw-3;
+            }
+            .pro__prices {
+                color: $color-red-bright;
+                font-size: $fs-3;
+                text-align: $text-style-1;
+            }
+        }
+        .card-footer {
+            background: transparent;
+            .pro__prices {
+                font-size: $fs-4;
+                font-weight: $fw-3;
+                color: $color-red-bright;
+                text-align: $text-style-1;
+                display: $dp-1;
+            }
+
+            .pro__addCart {
+                font-size: $fs-2;
+                display: block;
+                margin: 0 auto;
+
+                background-image: linear-gradient(to right, #16222a 0%, #3a6073 51%, #16222a 100%);
+                padding: 10px 20px;
+                text-transform: uppercase;
+                transition: 0.5s;
+                background-size: 200% auto;
+                color: white;
+                box-shadow: 0 0 20px #eee;
+                border-radius: 10px;
+
+                &:hover {
+                    background-position: right center;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

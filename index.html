@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Owl-carousel -->
+    <link rel="stylesheet" href="./assets/sass/Vendor/owl.carousel.min.css">
+    <link rel="stylesheet" href="./assets/sass/Vendor/owl.theme.default.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="./css/main.css">
+
+    <title>Mobile Shop</title>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header__top container">
+            <div class="top__left">
+                <span>WELCOME TO OUR SHOP!</span>
+            </div>
+            <div class="top__right">
+                <!-- Location -->
+                <span>
+                    <a href="#">
+                        <i class="fa-solid fa-location-dot"></i> Select Location
+                    </a>
+                </span>
+                <!-- Login -->
+                <span>
+                    <a href="#">
+                        <i class="fa-solid fa-right-to-bracket"></i> Log In
+                    </a>
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="header__bottom container">
+            <div class="bottom__left">
+                <a href="./index.html">
+                    <span>E</span>lectronics
+                    <span>M</span>art
+                </a>
+
+            </div>
+            <div class="bottom__right">
+                <button>
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button>
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+                <button onclick="tooglePopup()">
+                    <i class="fa-solid fa-cart-shopping"></i> Cart
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Nav -->
+    <nav id="myNav">
+        <div class="nav__content container">
+            <div class="nav__left">
+                <select class="form-control" id="navSelect" onchange="filterPros()">
+                    <option value="all">All categories</option>
+                    <option value="samsung">Samsung</option>
+                    <option value="iphone">iPhone</option>
+                </select>
+            </div>
+            <div class="nav__right">
+                <a href="index.html">HOME</a>
+                <a href="#">PRODUCTS</a>
+                <a href="#">ABOUT US</a>
+                <a href="#">CONTACT US</a>
+            </div>
+        </div>
+    </nav>
+    <!-- End nav -->
+
+    <!-- Carousel -->
+    <section class="carousel__content container">
+        <div class="owl-carousel owl-theme">
+            <div>
+                <img src="./assets/img/banner1.jpg" alt="sale banner 1">
+            </div>
+            <div>
+                <img src="./assets/img/banner2.jpg" alt="sale banner 2">
+            </div>
+            <div>
+                <img src="./assets/img/banner3.png" alt="sale banner 2">
+            </div>
+        </div>
+    </section>
+    <!-- End Carousel -->
+
+    <!-- Cart pop-up -->
+    <section class="product-cart" id="cart__popup">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="close-btn" onclick="tooglePopup()">
+                <i class="fa-solid fa-circle-xmark"></i>
+            </div>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">STT</th>
+                        <th scope="col">Tên sản phẩm</th>
+                        <th scope="col">Số lượng</th>
+                        <th scope="col">Giá tiền</th>
+                    </tr>
+                </thead>
+                <tbody id="mainCart">
+                </tbody>
+            </table>
+            <div id="card-status">
+                <div id="cart-pay">
+                    <div class="pay-title">
+                        <h1>Tổng giá: $<span id="pay-amount"></span></h1>
+                    </div>
+                    <div class="pay-action">
+                        <button onclick="window.location.href= './app/views/user/oder-page.html'" id="purchaseAction"
+                            class="pur-action">Thanh Toán</button>
+                        <button id="clear-action" onclick="clearlocalStorage()" class="clear-action">Xóa Giỏ
+                            Hàng</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- End cart pop-up -->
+
+    <!-- Content -->
+    <section class="product-section">
+        <div class="product__content container">
+            <div class="row"></div>
+        </div>
+    </section>
+    <!-- End content -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer__content container">
+            <div class="content__top">
+                <!-- Item 1 -->
+                <div class="footer__item">
+                    <div class="item__title">
+                        <span>Categories</span>
+                    </div>
+                    <div class="item__link">
+                        <ul>
+                            <li>
+                                <a href="#">Mobiles</a>
+                            </li>
+                            <li>
+                                <a href="#">Computers</a>
+                            </li>
+                            <li>
+                                <a href="#">TV, Audio</a>
+                            </li>
+                            <li>
+                                <a href="#">Smartphones</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="footer__item">
+                    <div class="item__title">
+                        <span>Quick Links</span>
+                    </div>
+                    <div class="item__link">
+                        <ul>
+                            <li>
+                                <a href="#">About Us</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact Us</a>
+                            </li>
+                            <li>
+                                <a href="#">Help</a>
+                            </li>
+                            <li>
+                                <a href="#">Faqs</a>
+                            </li>
+                            <li>
+                                <a href="#">Terms of use</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy Policy</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="footer__item">
+                    <div class="item__title">
+                        <span>Get in Touch</span>
+                    </div>
+                    <div class="item__link">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <i class="fa-solid fa-location-dot"></i> Mkc, 123 Sebastian, USA.
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa-solid fa-mobile-button"></i> 12 2345 6790</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa-solid fa-phone-flip"></i> +11 3672 1890</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa-solid fa-envelope-open"></i> contact@mobileshop.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="footer__item">
+                    <div class="item__title">
+                        <span>Follow Us on</span>
+                    </div>
+                    <div class="item__link">
+                        <a href="#" class="link__fb">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="#" class="link__tw">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="#" class="link__gg">
+                            <i class="fa-brands fa-google-plus"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <!-- End footer -->
+
+    <!-- Cart button -->
+    <a href="#top" id="pop-up__cart__btn">
+        <button class="pop-up__cart__btn" onclick="tooglePopup()">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </button>
+    </a>
+
+    <!-- Cart button js -->
+    <script>
+        function hideCartBtn() {
+            if ($(this).scrollTop() > 200) {
+                document.getElementById("pop-up__cart__btn").style.display = "inline";
+            } else {
+                document.getElementById("pop-up__cart__btn").style.display = "none";
+            }
+        }
+        window.onscroll = hideCartBtn;
+    </script>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="./assets/sass/Vendor/owl.carousel.min.js"></script>
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            responsiveClass: true,
+            autoplay: true,
+            autoplaySpeed: 1500,
+            autoplayHoverPause: true,
+            slideTransition: 'linear',
+            responsive: {
+                0: {
+                    items: 3,
+                    nav: true
+                },
+                768: {
+                    items: 2,
+                    nav: false
+                },
+                992: {
+                    items: 1,
+                    nav: true,
+                    loop: true
+                }
+            }
+        })
+    </script>
+
+    <!-- axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- main js -->
+    <script src="./app/services/user/ProductServices.js"></script>
+    <script src="./app/models/user/CartItem.js"></script>
+    <script src="./app/models/user/Cart.js"></script>
+
+    <script src="./app/controller/user/main.js"></script>
+    <script src="./app/controller/user/popup-cart.js"></script>
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
