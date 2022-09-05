@@ -24,7 +24,7 @@ var clearlocalStorage = () => {
         document.querySelector("#cart__popup .close-btn").click();
         setTimeout(function () {
             window.location.reload();
-        }, 1000);
+        }, 500);
     }
 }
 
