@@ -22,6 +22,9 @@ var clearlocalStorage = () => {
 
         getELE("pay-amount").innerHTML = "";
         document.querySelector("#cart__popup .close-btn").click();
+        setTimeout(function () {
+            window.location.reload();
+        }, 1000);
     }
 }
 
