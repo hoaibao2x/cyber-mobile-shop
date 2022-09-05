@@ -21,23 +21,23 @@ getLocalStorage();
 // Show oder content
 function showOderContent(myOder) {
     var content = "";
-    myOder.map(function (oderItem) {
+    myOder.map(function (orderItem) {
         content += `
-            <div class= "oder__item">
+            <div class= "order__item">
                 <div class= "row">
                     <div class= "col-md-6 text-center">
-                        <img class= "oder__image" src= "${oderItem.img}" />
+                        <img class= "order__image" src= "${orderItem.img}" />
                     </div>
                     <div class= "col-md-6">
-                        <ul class= "oder__desc">
+                        <ul class= "order__desc">
                             <li>
-                                <span class= "oder__name">Tên sản phẩm: </br> ${oderItem.namePro}</span>
+                                <span class= "order__name">Tên sản phẩm: </br> ${orderItem.namePro}</span>
                             </li>
                             <li>
-                                <span class= "oder__quantity">Số lượng: <span class= "quantity__desc">${oderItem.quantity}</span></span>
+                                <span class= "order__quantity">Số lượng: <span class= "quantity__desc">${orderItem.quantity}</span></span>
                             </li>
                             <li>
-                                <span class= "oder__amount">Thành tiền: <span class= "amount__desc">$${(oderItem.quantity * oderItem.price).toLocaleString()}</span></span>
+                                <span class= "order__amount">Thành tiền: <span class= "amount__desc">$${(orderItem.quantity * orderItem.price).toLocaleString()}</span></span>
                             </li>
                         </ul>
 
@@ -47,14 +47,14 @@ function showOderContent(myOder) {
         `
     });
 
-    getELE("collapseOder").innerHTML = content;
+    getELE("collapseOrder").innerHTML = content;
 }
 
 // Show total price
-function showTotalPrice(myOder) {
+function showTotalPrice(myOrder) {
     var sum = 0;
-    for (let i = 0; i < myOder.length; i++) {
-        sum = sum + (myOder[i].quantity * myOder[i].price);
+    for (let i = 0; i < myOrder.length; i++) {
+        sum = sum + (myOrder[i].quantity * myOrder[i].price);
     }
 
     return sum;
