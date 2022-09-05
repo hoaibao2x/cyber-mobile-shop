@@ -37,14 +37,10 @@
                 border-radius: inherit;
             }
 
-            .card-header {
-                transform: scale(1.05);
-            }
         }
 
         .card-header {
             background: transparent;
-            transform: scale(1);
             transition: all 0.5s;
         }
         .pro__content {
